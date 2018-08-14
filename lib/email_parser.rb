@@ -6,13 +6,10 @@ class EmailParser
   def initialize(emails)
     @emails = emails
   end
-  
-  def self.parse
-    parser = self.new
-    parser.emails = emails
+
+  def parse
     @emails_arr = emails.split(/\s*[,\s]\s*/)
     @emails_arr.delete('')
-    binding.pry
     return @emails_arr.uniq
   end
 
